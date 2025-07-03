@@ -192,7 +192,7 @@ export default function Dashboard() {
       <main className="flex-1 p-6">
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-semibold">WELCOME!</h1>
+          <h1 className="text-x2 font-semibold">WELCOME!</h1>
           <div className="flex items-center space-x-4">
             <SunIcon className="h-5 w-5 text-gray-500 cursor-pointer" />
             <MoonIcon className="h-5 w-5 text-gray-500 cursor-pointer" />
@@ -210,8 +210,8 @@ export default function Dashboard() {
         </div>
 
         {/* Alert */}
-        <div className="bg-orange-100 border border-orange-300 text-orange-700 p-3 rounded mb-4">
-          We regret to inform you that our server is currently experiencing technical difficulties.
+        <div className="bg-white border border-green-900 text-black p-3 rounded mb-4">
+          Welcome to a unique stock exchange web.
         </div>
 
         {/* Stats Cards */}
