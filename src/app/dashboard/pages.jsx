@@ -1,32 +1,190 @@
 "use client";
-import { BellIcon, SunIcon, MoonIcon, CogIcon, ClockIcon } from "@heroicons/react/24/outline";
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  BellIcon,
+  SunIcon,
+  MoonIcon,
+  CogIcon,
+  ClockIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Dashboard() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r">
         <div className="flex items-center h-16 px-4 font-bold text-xl border-b">
-          <span className="text-orange-500">🛒 Larkon</span>
+          <span className="text-black">🛒 Larkon</span>
         </div>
         <nav className="flex flex-col p-4 space-y-2">
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center">
+          <Link
+            href="#"
+            className="text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center"
+          >
             <span className="ml-2">Widgets</span>
-            <span className="ml-auto bg-green-500 text-white text-xs px-2 py-0.5 rounded">9+</span>
-          </a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Base UI</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Advanced UI</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Charts</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Forms</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Tables</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Icons</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Maps</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center">
+            <span className="ml-auto bg-green-500 text-white text-xs px-2 py-0.5 rounded">
+              9+
+            </span>
+          </Link>
+
+          {/* Section Label */}
+          <p className="text-xs font-semibold text-gray-500 uppercase mt-4 mb-2 px-2">
+            General
+          </p>
+
+          {/* Dropdown Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="w-full text-left text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center justify-between"
+          >
+            <span>Advance UI</span>
+            <svg
+              className={`w-4 h-4 transform transition-transform ${
+                open ? "rotate-90" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Dropdown Content */}
+          {open && (
+            <div className="ml-4 flex flex-col space-y-1">
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Buttons
+              </Link>
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Cards
+              </Link>
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Modals
+              </Link>
+            </div>
+          )}
+
+          {/* Dropdown Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="w-full text-left text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center justify-between"
+          >
+            <span>Base UI</span>
+            <svg
+              className={`w-4 h-4 transform transition-transform ${
+                open ? "rotate-90" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Dropdown Content */}
+          {open && (
+            <div className="ml-4 flex flex-col space-y-1">
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Rating
+              </Link>
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Sweet Alert
+              </Link>
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Sweet Swiper
+              </Link>
+            </div>
+          )}
+          {/* Dropdown Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="w-full text-left text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center justify-between"
+          >
+            <span>chart</span>
+            <svg
+              className={`w-4 h-4 transform transition-transform ${
+                open ? "rotate-90" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Dropdown Content */}
+          {open && (
+            <div className="ml-4 flex flex-col space-y-1">
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Area 
+              </Link>
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Bar 
+              </Link>
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Candlestick
+              </Link>
+                           
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                line
+              </Link>
+              
+              <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+                Columb
+              </Link>
+
+            </div>
+          )}
+          <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+            Forms
+          </Link>
+          <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+            Tables
+          </Link>
+          <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+            Icons
+          </Link>
+          <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+            Maps
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-700 hover:bg-gray-200 p-2 rounded flex items-center"
+          >
             Badge Menu
-            <span className="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded">1</span>
-          </a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Menu Item</a>
-          <a href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">Disable Item</a>
+            <span className="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded">
+              1
+            </span>
+          </Link>
+          <Link href="#" className="text-gray-700 hover:bg-gray-200 p-2 rounded">
+            Menu Item
+          </Link>
+          <Link href="#" className="text-gray-400 cursor-not-allowed p-2 rounded">
+            Disable Item
+          </Link>
         </nav>
       </aside>
 
@@ -41,10 +199,12 @@ export default function Dashboard() {
             <BellIcon className="h-5 w-5 text-gray-500 cursor-pointer" />
             <CogIcon className="h-5 w-5 text-gray-500 cursor-pointer" />
             <ClockIcon className="h-5 w-5 text-gray-500 cursor-pointer" />
-            <img
+            <Image
               src="https://i.pravatar.cc/40"
               alt="User"
-              className="w-8 h-8 rounded-full"
+              width={32}
+              height={32}
+              className="rounded-full"
             />
           </div>
         </div>
@@ -93,11 +253,11 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Placeholder for Performance Chart */}
-        <div className="mt-6 bg-white p-6 rounded shadow">
-          <h2 className="text-lg font-semibold mb-2">Performance</h2>
-          <div className="h-48 bg-gray-100 rounded flex items-center justify-center text-gray-400">
-            (Chart Placeholder)
+        {/* Performance Chart */}
+        <div className="mt-6 p-6 rounded shadow">
+          <h2 className="text-black text-lg font-semibold mb-2">Basic Area chart</h2>
+          <div className="bg-white rounded flex items-center justify-center text-black">
+            <img src="https://media.istockphoto.com/id/1487894858/photo/candlestick-chart-and-data-of-financial-market.jpg?s=1024x1024&w=is&k=20&c=AfDUACB1NMYPpuvEgEgQDUNt2rMuCsPoLnfH0LSYs1s=" alt="" className="h-auto w-auto"/>
           </div>
         </div>
       </main>

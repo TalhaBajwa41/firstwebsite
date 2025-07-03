@@ -1,5 +1,6 @@
 "use client";
-import { BellIcon, SearchIcon, MenuIcon } from "@heroicons/react/outline";
+import { BellIcon, MagnifyingGlassIcon, Bars3Icon } from "@heroicons/react/24/outline";
+
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
         
         {/* Left: Logo */}
         <div className="flex items-center space-x-2">
-          <MenuIcon className="h-6 w-6 cursor-pointer md:hidden" />
+          <Bars3Icon className="h-6 w-6 cursor-pointer md:hidden" />
           <span className="text-xl font-bold">🌟 MyUniqueApp</span>
         </div>
 
@@ -24,7 +25,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           {/* Search */}
           <div className="hidden md:flex items-center bg-indigo-500 rounded px-2 py-1">
-            <SearchIcon className="h-5 w-5 text-white" />
+            <MagnifyingGlassIcon className="h-5 w-5 text-white" />
             <input
               type="text"
               placeholder="Search..."
