@@ -1,49 +1,49 @@
-// components/Header.js
-
-import Link from "next/link";
+"use client";
+import { BellIcon, SearchIcon, MenuIcon } from "@heroicons/react/outline";
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo */}
+        
+        {/* Left: Logo */}
         <div className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-gray-800">
-            UniqueHeader
-          </span>
+          <MenuIcon className="h-6 w-6 cursor-pointer md:hidden" />
+          <span className="text-xl font-bold">🌟 MyUniqueApp</span>
         </div>
 
-        {/* Navigation */}
+        {/* Center: Navigation */}
         <nav className="hidden md:flex space-x-6">
-          <Link
-            href="/"
-            className="text-gray-600 hover:text-gray-900 transition"
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-gray-600 hover:text-gray-900 transition"
-          >
-            About
-          </Link>
-          <Link
-            href="/services"
-            className="text-gray-600 hover:text-gray-900 transition"
-          >
-            Services
-          </Link>
-          <Link
-            href="/contact"
-            className="text-gray-600 hover:text-gray-900 transition"
-          >
-            Contact
-          </Link>
+          <a href="#" className="hover:text-gray-200 transition">Dashboard</a>
+          <a href="#" className="hover:text-gray-200 transition">Projects</a>
+          <a href="#" className="hover:text-gray-200 transition">Team</a>
+          <a href="#" className="hover:text-gray-200 transition">Reports</a>
         </nav>
 
-        {/* Mobile Menu Button (optional) */}
-        <div className="md:hidden">
-          {/* You could add a mobile menu button here */}
+        {/* Right: Search, Notifications, Avatar */}
+        <div className="flex items-center space-x-4">
+          {/* Search */}
+          <div className="hidden md:flex items-center bg-indigo-500 rounded px-2 py-1">
+            <SearchIcon className="h-5 w-5 text-white" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="bg-transparent focus:outline-none ml-2 placeholder-white text-sm"
+            />
+          </div>
+          
+          {/* Notification */}
+          <button className="relative">
+            <BellIcon className="h-6 w-6" />
+            <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1 py-0.5 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">3</span>
+          </button>
+
+          {/* User Avatar */}
+          <img
+            src="https://i.pravatar.cc/40"
+            alt="User"
+            className="w-8 h-8 rounded-full border-2 border-white"
+          />
         </div>
       </div>
     </header>
